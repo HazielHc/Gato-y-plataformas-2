@@ -14,6 +14,10 @@ config/name="Cat and Plataforms 2"
 run/main_scene="uid://dihfw6gdnpajk"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

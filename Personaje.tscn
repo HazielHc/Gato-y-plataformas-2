@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dihfw6gdnpajk"]
+[gd_scene load_steps=13 format=3 uid="uid://dihfw6gdnpajk"]
 
 [ext_resource type="Script" uid="uid://vvbdajue8t5x" path="res://PlayerMovement.gd" id="1_hbjos"]
 [ext_resource type="Texture2D" uid="uid://cs5n781tb7uq" path="res://Player Sprites/FreeCatCharacterAnimations/1_Cat_Idle-Sheet.png" id="1_w730s"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://gj6nfjaa4xco" path="res://Player Sprites/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png" id="4_or8g2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tybj"]
-size = Vector2(12, 19.625)
+size = Vector2(15, 22.8125)
 
 [sub_resource type="Animation" id="Animation_pbgxt"]
 resource_name = "Idle"
@@ -89,9 +89,9 @@ tracks/2/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_6aes0"]
-resource_name = "run"
-length = 0.5
+[sub_resource type="Animation" id="Animation_2eufc"]
+resource_name = "fall"
+length = 0.3
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -103,7 +103,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_hbjos")]
+"values": [ExtResource("4_or8g2")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -115,7 +115,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [10]
+"values": [4]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -124,10 +124,10 @@ tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.133333, 0.166667, 0.2, 0.266667, 0.333333, 0.4, 0.466667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+"values": [0, 1, 2]
 }
 
 [sub_resource type="Animation" id="Animation_oyk70"]
@@ -171,9 +171,9 @@ tracks/2/keys = {
 "values": [0, 1, 2]
 }
 
-[sub_resource type="Animation" id="Animation_2eufc"]
-resource_name = "fall"
-length = 0.3
+[sub_resource type="Animation" id="Animation_6aes0"]
+resource_name = "run"
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -185,7 +185,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_or8g2")]
+"values": [ExtResource("2_hbjos")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -197,7 +197,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [10]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -206,10 +206,10 @@ tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.233333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.133333, 0.166667, 0.2, 0.266667, 0.333333, 0.4, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2pqsf"]
@@ -221,12 +221,7 @@ _data = {
 &"run": SubResource("Animation_6aes0")
 }
 
-[sub_resource type="QuadMesh" id="QuadMesh_w730s"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbjos"]
-size = Vector2(424, 18.5)
-
-[node name="Node2D" type="Node2D"]
+[node name="personaje" type="Node2D"]
 position = Vector2(-54, -29)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -239,7 +234,7 @@ texture = ExtResource("1_w730s")
 hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-10, -15.8125)
+position = Vector2(-16.5, -15.4063)
 shape = SubResource("RectangleShape2D_4tybj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
@@ -250,14 +245,3 @@ libraries = {
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 visible = false
 zoom = Vector2(2, 2)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
-position = Vector2(51, 58)
-scale = Vector2(421.75, 31.25)
-mesh = SubResource("QuadMesh_w730s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(49, 52.75)
-shape = SubResource("RectangleShape2D_hbjos")
