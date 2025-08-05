@@ -13,7 +13,6 @@ config_version=5
 config/name="Cat and Plataforms 2"
 run/main_scene="uid://dihfw6gdnpajk"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
 
 [rendering]
 

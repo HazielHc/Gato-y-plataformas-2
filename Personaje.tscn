@@ -254,10 +254,10 @@ zoom = Vector2(2, 2)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
-position = Vector2(51, 51.6875)
-scale = Vector2(421.75, 18.625)
+position = Vector2(51, 58)
+scale = Vector2(421.75, 31.25)
 mesh = SubResource("QuadMesh_w730s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(49, 47)
+position = Vector2(49, 52.75)
 shape = SubResource("RectangleShape2D_hbjos")
