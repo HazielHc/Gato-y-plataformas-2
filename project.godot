@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cat and Plataforms 2"
-run/main_scene="uid://dihfw6gdnpajk"
+run/main_scene="uid://du3xw3h3m5gbr"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [display]
