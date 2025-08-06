@@ -68,13 +68,21 @@ motion_mirroring = Vector2(1920, 0)
 position = Vector2(0, -686)
 texture = ExtResource("7_qedhj")
 
+[node name="ParallaxLayer13" type="ParallaxLayer" parent="."]
+position = Vector2(-1, 1369)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="subsuelo" type="Sprite2D" parent="ParallaxLayer13"]
+position = Vector2(1, -406)
+texture = ExtResource("7_qedhj")
+
 [node name="ParallaxLayer8" type="ParallaxLayer" parent="."]
 position = Vector2(-908, -767)
 motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(1920, 0)
 
 [node name="subsuelo" type="Sprite2D" parent="ParallaxLayer8"]
-position = Vector2(917, 1785)
+position = Vector2(795, 1587)
 texture = ExtResource("1_l5324")
 
 [node name="ParallaxLayer10" type="ParallaxLayer" parent="."]
