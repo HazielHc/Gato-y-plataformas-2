@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6aufm0rgawkl"
-path="res://.godot/imported/TX Village Props.png-916922d50187dac572872ef10dfe4b88.ctex"
+uid="uid://bakf3gdjwn37j"
+path="res://.godot/imported/Idle.png-e44869d2fdad71ba1cf2ef4c8b7dc2e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Map/TX Village Props.png"
-dest_files=["res://.godot/imported/TX Village Props.png-916922d50187dac572872ef10dfe4b88.ctex"]
+source_file="res://Assets/Trampoline/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-e44869d2fdad71ba1cf2ef4c8b7dc2e7.ctex"]
 
 [params]
 

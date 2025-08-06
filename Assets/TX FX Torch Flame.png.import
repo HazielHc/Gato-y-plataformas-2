@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcrir4f4fty6g"
-path="res://.godot/imported/TX Chest Animation.png-9e7e4ec42787a5be01599c9a2592195e.ctex"
+uid="uid://b5lbgig0x2gk0"
+path="res://.godot/imported/TX FX Torch Flame.png-a9ce8336976cbb32d57520dd99178f89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Map/TX Chest Animation.png"
-dest_files=["res://.godot/imported/TX Chest Animation.png-9e7e4ec42787a5be01599c9a2592195e.ctex"]
+source_file="res://Assets/TX FX Torch Flame.png"
+dest_files=["res://.godot/imported/TX FX Torch Flame.png-a9ce8336976cbb32d57520dd99178f89.ctex"]
 
 [params]
 

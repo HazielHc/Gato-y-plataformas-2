@@ -224,24 +224,24 @@ _data = {
 [node name="personaje" type="Node2D"]
 position = Vector2(-54, -29)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="personaje" type="CharacterBody2D" parent="."]
 script = ExtResource("1_hbjos")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="personaje"]
 position = Vector2(-15.625, -20.25)
 scale = Vector2(1.66406, 1.51563)
 texture = ExtResource("1_w730s")
 hframes = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="personaje"]
 position = Vector2(-16.5, -15.4063)
 shape = SubResource("RectangleShape2D_4tybj")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="personaje"]
 libraries = {
 &"": SubResource("AnimationLibrary_2pqsf")
 }
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="personaje"]
 visible = false
 zoom = Vector2(2, 2)

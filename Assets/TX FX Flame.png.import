@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5lbgig0x2gk0"
-path="res://.godot/imported/TX FX Torch Flame.png-fcf63f9277b23f216fc92023638669de.ctex"
+uid="uid://d0w07lc6ww7l5"
+path="res://.godot/imported/TX FX Flame.png-c3b00c8adc344ea2736d5a08a906d197.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Map/TX FX Torch Flame.png"
-dest_files=["res://.godot/imported/TX FX Torch Flame.png-fcf63f9277b23f216fc92023638669de.ctex"]
+source_file="res://Assets/TX FX Flame.png"
+dest_files=["res://.godot/imported/TX FX Flame.png-c3b00c8adc344ea2736d5a08a906d197.ctex"]
 
 [params]
 

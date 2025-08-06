@@ -2,30 +2,27 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-const DOUBLE_JUMP_VELOCITY = -400.0
-var can_double_jump = false
+const MAX_JUMPS = 2
+var jump_count = 0
 
 @onready var animationPlayer = $AnimationPlayer
 @onready var sprite2D = $Sprite2D
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Agrega la gravedad
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept"):
-		if is_on_floor():
-			# Regular jump from the ground
-			velocity.y = JUMP_VELOCITY
-			can_double_jump = true
-		elif can_double_jump:
-			# Double jump
-			velocity.y = DOUBLE_JUMP_VELOCITY
-			can_double_jump = true
+	# Reiniciar saltos si toca el suelo
+	if is_on_floor():
+		jump_count = 0
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	# Manejo de saltos (doble salto)
+	if Input.is_action_just_pressed("ui_accept") and jump_count < MAX_JUMPS:
+		velocity.y = JUMP_VELOCITY
+		jump_count += 1
+
+	# Movimiento horizontal
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -36,10 +33,8 @@ func _physics_process(delta: float) -> void:
 
 	animations(direction)
 
-	if direction == 1:
-		sprite2D.flip_h = false
-	elif direction == -1:
-		sprite2D.flip_h = true
+	# Dirección del sprite
+	sprite2D.flip_h = direction < 0
 
 func animations(direction):
 	if is_on_floor():
