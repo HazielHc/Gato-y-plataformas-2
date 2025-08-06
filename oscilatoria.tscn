@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://bq48k8vlm8ki7"]
+
+[ext_resource type="Texture2D" uid="uid://dkqtyjdsemmnf" path="res://Assets/TX Tileset Ground.png" id="1_li6r5"]
+[ext_resource type="Script" uid="uid://bhw0rnyemkm8k" path="res://plataforma.gd" id="1_ysvlk"]
+
+[sub_resource type="Curve2D" id="Curve2D_li6r5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -123, 42, 0, 0, 0, 0, 440, 91)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qb8gh"]
+size = Vector2(88.75, 26.5)
+
+[sub_resource type="Animation" id="Animation_ysvlk"]
+resource_name = "a"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.93333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qb8gh"]
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.13333, 5.86667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b86pb"]
+_data = {
+&"RESET": SubResource("Animation_qb8gh"),
+&"a": SubResource("Animation_ysvlk")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-20.3197, 0)
+scale = Vector2(1.04618, 1)
+curve = SubResource("Curve2D_li6r5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-123, 42)
+rotation = 0.086815
+
+[node name="plataforma" type="AnimatableBody2D" parent="Path2D/PathFollow2D"]
+physics_interpolation_mode = 1
+position = Vector2(123, -41)
+rotation = -0.0872665
+script = ExtResource("1_ysvlk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/plataforma"]
+position = Vector2(-122, 42)
+scale = Vector2(0.942931, 0.760741)
+texture = ExtResource("1_li6r5")
+region_enabled = true
+region_rect = Rect2(0, 448, 96, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/plataforma"]
+position = Vector2(-123, 41)
+shape = SubResource("RectangleShape2D_qb8gh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_b86pb")
+}
+autoplay = "RESET"

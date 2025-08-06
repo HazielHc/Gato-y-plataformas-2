@@ -30,11 +30,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
 	animations(direction)
 
-	# Dirección del sprite
-	sprite2D.flip_h = direction < 0
+	# Flip del sprite
+	if direction == 1:
+		sprite2D.flip_h = false
+	elif direction == -1:
+		sprite2D.flip_h = true
 
 func animations(direction):
 	if is_on_floor():

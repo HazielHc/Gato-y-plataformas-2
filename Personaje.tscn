@@ -243,5 +243,6 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="personaje"]
-visible = false
+position = Vector2(-353, -452)
+anchor_mode = 0
 zoom = Vector2(2, 2)
