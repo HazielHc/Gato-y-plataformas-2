@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		elif can_double_jump:
 			# Double jump
 			velocity.y = DOUBLE_JUMP_VELOCITY
-			can_double_jump = false
+			can_double_jump = true
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
