@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://dihfw6gdnpajk"]
 
-[ext_resource type="Script" uid="uid://vvbdajue8t5x" path="res://PlayerMovement.gd" id="1_hbjos"]
-[ext_resource type="Texture2D" uid="uid://cs5n781tb7uq" path="res://Player Sprites/FreeCatCharacterAnimations/1_Cat_Idle-Sheet.png" id="1_w730s"]
-[ext_resource type="Texture2D" uid="uid://cmi43mse61sfr" path="res://Player Sprites/FreeCatCharacterAnimations/2_Cat_Run-Sheet.png" id="2_hbjos"]
-[ext_resource type="Texture2D" uid="uid://1mkcsqbg5v4h" path="res://Player Sprites/FreeCatCharacterAnimations/3_Cat_Jump-Sheet.png" id="3_vc88a"]
-[ext_resource type="Texture2D" uid="uid://gj6nfjaa4xco" path="res://Player Sprites/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png" id="4_or8g2"]
-[ext_resource type="Script" uid="uid://yrxwy03145go" path="res://camera_2d.gd" id="6_vc88a"]
+[ext_resource type="Script" uid="uid://vvbdajue8t5x" path="res://PlayerMovement.gd" id="1_7216l"]
+[ext_resource type="Texture2D" uid="uid://cs5n781tb7uq" path="res://Player Sprites/FreeCatCharacterAnimations/1_Cat_Idle-Sheet.png" id="2_ok32j"]
+[ext_resource type="Texture2D" uid="uid://gj6nfjaa4xco" path="res://Player Sprites/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png" id="3_72rsm"]
+[ext_resource type="Texture2D" uid="uid://1mkcsqbg5v4h" path="res://Player Sprites/FreeCatCharacterAnimations/3_Cat_Jump-Sheet.png" id="4_ndubs"]
+[ext_resource type="Texture2D" uid="uid://cmi43mse61sfr" path="res://Player Sprites/FreeCatCharacterAnimations/2_Cat_Run-Sheet.png" id="5_k3uqj"]
+[ext_resource type="Script" uid="uid://yrxwy03145go" path="res://camera_2d.gd" id="6_8u173"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tybj"]
 size = Vector2(15, 22.8125)
@@ -24,7 +24,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_w730s")]
+"values": [ExtResource("2_ok32j")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -63,7 +63,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_w730s")]
+"values": [ExtResource("2_ok32j")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -104,7 +104,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_or8g2")]
+"values": [ExtResource("3_72rsm")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -145,7 +145,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_vc88a")]
+"values": [ExtResource("4_ndubs")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -186,7 +186,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_hbjos")]
+"values": [ExtResource("5_k3uqj")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -226,12 +226,12 @@ _data = {
 position = Vector2(-54, -29)
 
 [node name="personaje" type="CharacterBody2D" parent="."]
-script = ExtResource("1_hbjos")
+script = ExtResource("1_7216l")
 
 [node name="Sprite2D" type="Sprite2D" parent="personaje"]
 position = Vector2(-15.625, -20.25)
 scale = Vector2(1.66406, 1.51563)
-texture = ExtResource("1_w730s")
+texture = ExtResource("2_ok32j")
 hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="personaje"]
@@ -249,4 +249,4 @@ zoom = Vector2(2, 2)
 process_callback = 0
 limit_bottom = 400
 limit_smoothed = true
-script = ExtResource("6_vc88a")
+script = ExtResource("6_8u173")
