@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdn6a0s1sy84l"]
+[gd_scene load_steps=7 format=3 uid="uid://dg26v0hvpohwh"]
 
-[ext_resource type="Script" uid="uid://ctslgstp8s4l8" path="res://Scripts/coin_2d.gd" id="1_awphx"]
+[ext_resource type="Script" uid="uid://b0tlbp8xomxku" path="res://Scripts/Coin2d.gd" id="1_awphx"]
 [ext_resource type="Texture2D" uid="uid://cjvpqlhms8kk7" path="res://Assets/coin_gold.png" id="1_fdbex"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_awphx"]
@@ -71,6 +71,7 @@ _data = {
 [node name="coin" type="Node2D"]
 
 [node name="coin2D" type="Area2D" parent="."]
+position = Vector2(3, 0)
 script = ExtResource("1_awphx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin2D"]
