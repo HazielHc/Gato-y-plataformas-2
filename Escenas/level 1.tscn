@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://du3xw3h3m5gbr"]
+[gd_scene load_steps=25 format=4 uid="uid://du3xw3h3m5gbr"]
 
 [ext_resource type="Script" uid="uid://b0g4f7b3xe3yy" path="res://Scripts/area de reinicio.gd" id="1_a2gre"]
 [ext_resource type="Texture2D" uid="uid://c6aufm0rgawkl" path="res://Assets/TX Village Props.png" id="2_t35r3"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bq48k8vlm8ki7" path="res://Escenas/oscilatoria.tscn" id="5_rwtpb"]
 [ext_resource type="PackedScene" uid="uid://cp0xygs4a5wuv" path="res://Escenas/fondo.tscn" id="6_lq2rf"]
 [ext_resource type="PackedScene" uid="uid://bgfxhcw0gaqkr" path="res://Escenas/trampolin.tscn" id="7_r26vy"]
+[ext_resource type="PackedScene" uid="uid://dg26v0hvpohwh" path="res://Escenas/coin.tscn" id="8_t35r3"]
+[ext_resource type="Script" uid="uid://b24e03uiq16mw" path="res://UI.gd" id="9_4h8dp"]
+[ext_resource type="Texture2D" uid="uid://cjvpqlhms8kk7" path="res://Assets/coin_gold.png" id="9_fyw6i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0rdp"]
 size = Vector2(11665, 18.5)
@@ -7277,6 +7280,13 @@ texture = ExtResource("2_t35r3")
 [sub_resource type="TileSet" id="TileSet_mwq2y"]
 sources/3 = SubResource("TileSetAtlasSource_xc3ba")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fyw6i"]
+bg_color = Color(0, 0, 0, 0.54902)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="TilemapLayers" type="Node2D"]
 position = Vector2(111, 267)
 
@@ -7341,5 +7351,42 @@ position = Vector2(-42, -125)
 position = Vector2(-10, 32)
 tile_map_data = PackedByteArray("AAD9//f/AwASACgAAAD9//j/AwASACkAAAD+//f/AwATACgAAAD+//j/AwATACkAAAD9//n/AwASACkAAAD+//n/AwATACkAAAD9//r/AwASACkAAAD+//r/AwATACkAAAD9//v/AwASACkAAAD+//v/AwATACkAAAD9//z/AwASACkAAAD+//z/AwATACkAAAD9//3/AwASACkAAAD+//3/AwATACkAAAD9//7/AwASACkAAAD+//7/AwATACkAAAD9////AwASACkAAAD+////AwATACkAAAD9/wAAAwASACkAAAD+/wAAAwATACkAAAD9/wEAAwASACkAAAD+/wEAAwATACkAAAD9/wIAAwASACkAAAD+/wIAAwATACkAAAD9/wMAAwASACkAAAD+/wMAAwATACkAAAD9/wQAAwASACkAAAD+/wQAAwATACkAAAD9/wUAAwASACkAAAD+/wUAAwATACkAAAD9/wYAAwASACkAAAD+/wYAAwATACkAAAD9/wcAAwASACkAAAD+/wcAAwATACkAAAD9/wgAAwASACkAAAD+/wgAAwATACkAAAD9/wkAAwASACkAAAD+/wkAAwATACkAAAD9/woAAwASACkAAAD+/woAAwATACkAAAA=")
 tile_set = SubResource("TileSet_mwq2y")
+
+[node name="coin" parent="." instance=ExtResource("8_t35r3")]
+position = Vector2(-1028, -193)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("9_4h8dp")
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 125.0
+offset_bottom = 54.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fyw6i")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(31.75, 27.75)
+scale = Vector2(2.78125, 2.53125)
+texture = ExtResource("9_fyw6i")
+hframes = 8
+
+[node name="dos puntos" type="Label" parent="CanvasLayer"]
+offset_left = 62.0
+offset_top = 13.0
+offset_right = 102.0
+offset_bottom = 36.0
+text = ":"
+
+[node name="CoinsCollectedText" type="Label" parent="CanvasLayer"]
+offset_left = 86.0
+offset_top = 14.0
+offset_right = 116.0
+offset_bottom = 37.0
+text = "0 0"
+
+[node name="coin2" parent="." instance=ExtResource("8_t35r3")]
+position = Vector2(-973, -184)
+
+[node name="coin3" parent="." instance=ExtResource("8_t35r3")]
+position = Vector2(-924, -186)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bgfxhcw0gaqkr"]
 
-[ext_resource type="Script" uid="uid://cktiv4ibev1y6" path="res://trampolin.gd" id="1_4hv7g"]
+[ext_resource type="Script" uid="uid://cktiv4ibev1y6" path="res://Scripts/trampolin.gd" id="1_4hv7g"]
 [ext_resource type="Texture2D" uid="uid://bakf3gdjwn37j" path="res://Assets/Trampoline/Idle.png" id="2_v2m4q"]
 [ext_resource type="Texture2D" uid="uid://flbk6cfxjvrh" path="res://Assets/Trampoline/Jump (28x28).png" id="3_7cju2"]
 

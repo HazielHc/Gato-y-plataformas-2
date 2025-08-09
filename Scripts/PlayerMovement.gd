@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -400.0
 const MAX_JUMPS = 2
 var jump_count = 0
 
+
 @onready var animationPlayer = $AnimationPlayer
 @onready var sprite2D = $Sprite2D
 

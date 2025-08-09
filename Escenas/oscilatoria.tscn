@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bq48k8vlm8ki7"]
 
-[ext_resource type="Script" uid="uid://bhw0rnyemkm8k" path="res://plataforma.gd" id="1_fknol"]
+[ext_resource type="Script" uid="uid://bhw0rnyemkm8k" path="res://Scripts/plataforma.gd" id="1_fknol"]
 [ext_resource type="Texture2D" uid="uid://dkqtyjdsemmnf" path="res://Assets/TX Tileset Ground.png" id="2_wqehg"]
 
 [sub_resource type="Curve2D" id="Curve2D_li6r5"]

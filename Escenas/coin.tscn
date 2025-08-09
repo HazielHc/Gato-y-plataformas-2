@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dg26v0hvpohwh"]
 
-[ext_resource type="Script" uid="uid://b0tlbp8xomxku" path="res://Scripts/Coin2d.gd" id="1_awphx"]
+[ext_resource type="Script" uid="uid://di856xdpt5m8c" path="res://Scripts/Coin2D.gd" id="1_awphx"]
 [ext_resource type="Texture2D" uid="uid://cjvpqlhms8kk7" path="res://Assets/coin_gold.png" id="1_fdbex"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_awphx"]
@@ -70,25 +70,25 @@ _data = {
 
 [node name="coin" type="Node2D"]
 
-[node name="coin2D" type="Area2D" parent="."]
+[node name="Coin2D" type="Area2D" parent="."]
 position = Vector2(3, 0)
 script = ExtResource("1_awphx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coin2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin2D"]
 position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_awphx")
 
-[node name="CoinGold" type="Sprite2D" parent="coin2D"]
+[node name="CoinGold" type="Sprite2D" parent="Coin2D"]
 position = Vector2(-1, -1)
 scale = Vector2(1.9375, 1.75)
 texture = ExtResource("1_fdbex")
 hframes = 8
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="coin2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Coin2D"]
 root_node = NodePath("../CoinGold")
 libraries = {
 &"": SubResource("AnimationLibrary_0jj0b")
 }
 autoplay = "animacion_coin"
 
-[connection signal="body_entered" from="coin2D" to="coin2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin2D" to="Coin2D" method="_on_body_entered"]

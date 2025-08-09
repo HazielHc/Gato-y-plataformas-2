@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://dihfw6gdnpajk"]
 
-[ext_resource type="Script" uid="uid://vvbdajue8t5x" path="res://PlayerMovement.gd" id="1_7216l"]
+[ext_resource type="Script" uid="uid://vvbdajue8t5x" path="res://Scripts/PlayerMovement.gd" id="1_7216l"]
 [ext_resource type="Texture2D" uid="uid://cs5n781tb7uq" path="res://Player Sprites/FreeCatCharacterAnimations/1_Cat_Idle-Sheet.png" id="2_ok32j"]
 [ext_resource type="Texture2D" uid="uid://gj6nfjaa4xco" path="res://Player Sprites/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png" id="3_72rsm"]
 [ext_resource type="Texture2D" uid="uid://1mkcsqbg5v4h" path="res://Player Sprites/FreeCatCharacterAnimations/3_Cat_Jump-Sheet.png" id="4_ndubs"]
 [ext_resource type="Texture2D" uid="uid://cmi43mse61sfr" path="res://Player Sprites/FreeCatCharacterAnimations/2_Cat_Run-Sheet.png" id="5_k3uqj"]
-[ext_resource type="Script" uid="uid://yrxwy03145go" path="res://camera_2d.gd" id="6_8u173"]
+[ext_resource type="Script" uid="uid://yrxwy03145go" path="res://Scripts/camera_2d.gd" id="6_8u173"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tybj"]
 size = Vector2(15, 22.8125)
